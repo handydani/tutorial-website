@@ -23,8 +23,8 @@ Before we begin let's see what it will eventually look like
 
 ![final](final.png)
 
-[Here]("http://dtravie.com/tutorial-website/final-website/index.html") it is live:
-
+Here it is live:
+http://dtravie.com/tutorial-website/final-website/index.html
 WOW! :sparkling_heart:
 
 It takes quite a bit of work to get to that point, however. Let's go on to look at how these languages all work together
@@ -140,7 +140,7 @@ This is all included with the starter-website index.html file so you don't have 
 The body contains the bread and butter of your website's HTML code. It's where you'd put all those p tags and img tags.
 
 ## This scary thing called Javascript
-We will be using Bootstrap, an open-source, front-end framework. It contains templates we'll be calling upon in our files. This is Bootstrap's responsive navigation header which we will be using. If you remove the link in the header then our navigation bar looks completely different.
+We will be using **Bootstrap**, an open-source, front-end framework. It contains templates we'll be calling upon in our files. This is Bootstrap's responsive navigation header which we will be using. If you remove the link in the header then our navigation bar looks completely different.
 
 ```html
 
@@ -191,7 +191,6 @@ This looks kind of boring so let's spice things up by adding style to our style 
 ```css
 
     .image{
-        background-image: url("img/forest.jpg");
         height: 100%;
         background-position: center;
         background-repeat: no-repeat;
@@ -208,6 +207,13 @@ This looks kind of boring so let's spice things up by adding style to our style 
         font-family: 'Work Sans', sans-serif;
     }
 
+```
+Now that we have this in place let's add an image which will be specific to the index in the index.html file. Why do we do this? Well, we want to make each tab have a different picture but we can't do that if they're inheriting the picture from the same file
+
+```css
+.image{
+    background-image: url("img/forest.jpg");
+}
 ```
 
 I want to make the header and the button look different from the rest, however, so we can play around with selectors to make it do just that
@@ -235,6 +241,42 @@ I want to make the header and the button look different from the rest, however, 
     </div>
 
 ```
+
+Let's add some style to these posts.
+```css
+#paragraph-post{
+    text-align: justify;
+    font-family: 'Work Sans', sans-serif;
+}
+
+.post{
+    width: 100%;
+    height: 1000px;
+    padding-right: 100px;
+    padding-left: 100px;
+    text-align: center;
+    font-family: 'Sanchez', serif;
+    padding-top: 100px;
+    color: white;
+}
+
+```
+
+Right now they are white but if we add the following code to our index.html file we can change the color of individual posts
+
+```css
+#first{
+    background: #a4a89f;
+}
+#second{
+    background: #737a6b;
+}
+#third{
+    background: #545b4b;
+}
+
+```
+
 ## Now you can scroll down...
 But you can also use buttons to make this experience feel more dynamic! Let's add buttons to our landing and our blog style posts
 
@@ -245,7 +287,9 @@ But you can also use buttons to make this experience feel more dynamic! Let's ad
 
 ```
 Try removing the class and type so you can see what a button looks like in plain HTML. As of right now clicking it doesn't do anything so this is where we're going to be using some Javascript to add functionality.
-I found [this]("https://stackoverflow.com/questions/18071046/smooth-scroll-to-specific-div-on-click") code on Stack Overflow which allows us to scroll automatically when we click.
+I found the following code on Stack Overflow which allows us to scroll automatically when we click.
+https://stackoverflow.com/questions/18071046/smooth-scroll-to-specific-div-on-click
+
 ```Javascript
 window.smoothScroll = function(target) {
     var scrollContainer = target;
@@ -272,21 +316,88 @@ window.smoothScroll = function(target) {
     scroll(scrollContainer, scrollContainer.scrollTop, targetY, 0);
 }
 ```
+
+Try clicking the buttons now!
+
+## Let's get started with the about page
+
+Make a landing page just like before, this time we're going to make h3 tags within a p tag to put our name number location and email. Let's add another blog style post to add an About page with all the details of who you are and what you're looking for.
+Change the image by adding this code in the style tag:
+```css
+.image{
+    background-image: url("img/building.jpg");
+}
+#first{
+    background: #f7cea3;
+}
+```
+Now we're going to include little icons that link to a profile like your linked in or github. They're by Font Awesome and it's already included in the header so you don't have to worry about getting it in your html for right now.
+We're going to create anchor tags which are used to enclose anything that links to another website
+The i tag represents a range of text set off from the normal text
+
+```html
+<a href = "https://www.spotify.com"><i class="fa fa-spotify fa-2x" aria-hidden="true"></i></a>
+```
+Feel free to change the size by manipulating the '2'
+
+This blue color doesn't match our theme and it's a little too close so let's change it with some internal styling
+
+```css
+i{
+    color: white;
+    padding: 10px;
+}
+```
+We're ready to move onto our resume
+##Resume page
+Same as before, we're going to make a landing page by copying over our navigation bar and making a post.
+Here's the color we're going to use and the image for our landing page
+```css
+#first{
+    background: #b18c75;
+}
+.image{
+    background-image: url("img/backpack.jpg");
+}
+```
+
+Now we're going to use the embed tag to add a resume on that first post.
+```html
+<embed src="devyd.pdf" type="application/pdf" width="100%" height="80%">
+```
+
+Awesome! And now we're done with our website!
+
 ## Challenge Time!
+
 If you haven't noticed already, the project.html file is empty. I challenge you guys to finish it!
-I recommend using 'cards'. Bootstrap's website has a neat content container which can hold information, pictures, and links. [Here]("http://getbootstrap.com/docs/4.0/components/card/") is the documentation from Bootstrap's website.
+I recommend using 'cards'. Bootstrap's website has a neat content container which can hold information, pictures, and links. Below is the documentation from Bootstrap's website.
+http://getbootstrap.com/docs/4.0/components/card/
+
 Another option is to use the slides/blog style posts we have on the homepage.
+
 You can get creative with it and do something else entirely!
-Email me your completed challenge or a live website or any other ways you get creative with this foundation and you'll get mad brownie points :sparkles:
+
+Email or facebook message me your completed challenge, live website, or any other ways you get creative with this template and you'll get mad brownie points :sparkles:
+
 With your permission, we can even feature your website on our Facebook and website!
 ## Helpful links, tips, and sources
-Special thank you to [w3schools]("https://www.w3schools.com/") for being my main source of learning how to make websites!
-[Bootstrap documentation]("https://getbootstrap.com/docs/4.0/getting-started/introduction/")
-[Small html/css cheatsheet]("https://www.bluehost.com/blog/website-design/html-css-cheat-sheet-infographic-4181/")
-[Unsplash photos]("https://www.Unsplash.com")
-[HTML quickstart guide]("http://ptgmedia.pearsoncmg.com/images/9780321928832/samplepages/0321928830.pdf")
-[Google fonts]("https://fonts.google.com/")
-[Design inspo over at muz.li]("https://muz.li/")
-[Hosting your website with github]("https://pages.github.com/")
+Special thank you to w3schools for being my main source of learning how to make websites!
+https://www.w3schools.com/
+Bootstrap documentation
+https://getbootstrap.com/docs/4.0/getting-started/introduction/
+Small html/css cheatsheet https://www.bluehost.com/blog/website-design/html-css-cheat-sheet-infographic-4181/
+Unsplash photos
+https://www.Unsplash.com
+HTML quickstart guide
+http://ptgmedia.pearsoncmg.com/images/9780321928832/samplepages/0321928830.pdf
+Google fonts
+https://fonts.google.com/
+Font awesome icons
+http://fontawesome.io/icons/
+Design inspo over at muz.li
+https://muz.li/
+Hosting your website with github
+https://pages.github.com/
 ## Thanks for following along!
 My name is Daniela and my email is dtravie@gmail.com if you have any questions or comments
