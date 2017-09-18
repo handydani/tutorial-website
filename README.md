@@ -11,7 +11,6 @@ Wikipedia says:
 >Hypertext Markup Language (HTML) is the standard markup language for creating web pages and web applications. With Cascading Style Sheets (CSS) and JavaScript it forms a triad of cornerstone technologies for the World Wide Web.[2] Web browsers receive documents from a web server or from local storage and render them into multimedia web pages. HTML describes the structure of a web page semantically and originally included cues for the appearance of the document.
 
 ##What does it actually mean?
-
 HTML is like a skeleton of a webpage. When you create a website, this is what gives it a structure. HTML is not a programming language. The neat but sometimes frustrating thing is that your browser will try its best to load your website even if you're missing brackets somewhere along the way.
 CSS is what makes everything look pretty and you can even have some simple functionality built into CSS like drawing shapes or transformations.
 
@@ -23,7 +22,8 @@ Have you ever wondered why Facebook looks different every time you load it? Or w
 Before we begin let's see what it will eventually look like
 
 ![final](final.png)
-[Here]("http://dtravie.com/tutorial-website/personal-website/final-website/index.html") it is live:
+
+[Here]("http://dtravie.com/tutorial-website/final-website/index.html") it is live:
 
 WOW! :sparkling_heart:
 
@@ -137,7 +137,7 @@ The head is at the beginning of your html code. The head contains meta data, scr
 
 This is all included with the starter-website index.html file so you don't have to worry about that right now.
 
-The body contains the bread and butter of your website's HTML code. It's where you'd put all those <p> tags and <img src =...> tags.
+The body contains the bread and butter of your website's HTML code. It's where you'd put all those p tags and img tags.
 
 ## This scary thing called Javascript
 We will be using Bootstrap, an open-source, front-end framework. It contains templates we'll be calling upon in our files. This is Bootstrap's responsive navigation header which we will be using. If you remove the link in the header then our navigation bar looks completely different.
@@ -168,21 +168,27 @@ We will be using Bootstrap, an open-source, front-end framework. It contains tem
     </nav>
 
 ```
+And here's how we're changing the font of this navigation bar
+```css
+#navbar-font{
+    font-family: 'Sanchez', serif;
+}
+```
+
 ##Let's make the landing page!
 
+Feel free to write your name in the header and a quick blurb in the paragraph tags
 ```html
     <div class="image">
         <div class="text">
-            <h1>DEVY D. DEVELOPER</h1>
-            <p> student, sibling, skater, software developer</p>
-            <button type="button" class="btn btn-outline-light" onclick="...">content</button>
+            <h1>...</h1>
+            <p>...</p>
           </div>
     </div>
 ```
-This looks kind of boring so let's spice things up by adding style tags before the head
+This looks kind of boring so let's spice things up by adding style to our style fyle
 
 ```css
-<style>
 
     .image{
         background-image: url("img/forest.jpg");
@@ -204,20 +210,67 @@ This looks kind of boring so let's spice things up by adding style tags before t
 
 ```
 
-###Blog style posts
+I want to make the header and the button look different from the rest, however, so we can play around with selectors to make it do just that
+
+```css
+.text h1{
+    font-family: 'Sanchez', serif;
+}
+.text button{
+    font-family: 'Sanchez', serif;
+
+}
+```
+
+##Blog style posts
 
 ```html
 
     <div id = "first" class = "post">
-        <h1>Post 1</h1>
-        <p>
-            <button type="button" class="btn btn-outline-light" onclick="...">next</button>
-        </p>
+        <h1></h1>
+
         <p id = "paragraph-post">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
         </p>
     </div>
 
+```
+## Now you can scroll down...
+But you can also use buttons to make this experience feel more dynamic! Let's add buttons to our landing and our blog style posts
+
+```html
+<p>
+    <button type="button" class="btn btn-outline-light" onclick="...">NAME</button>
+</p>
+
+```
+Try removing the class and type so you can see what a button looks like in plain HTML. As of right now clicking it doesn't do anything so this is where we're going to be using some Javascript to add functionality.
+I found [this]("https://stackoverflow.com/questions/18071046/smooth-scroll-to-specific-div-on-click") code on Stack Overflow which allows us to scroll automatically when we click.
+```Javascript
+window.smoothScroll = function(target) {
+    var scrollContainer = target;
+    do {
+        //find scroll container
+        scrollContainer = scrollContainer.parentNode;
+        if (!scrollContainer) return;
+        scrollContainer.scrollTop += 1;
+    } while (scrollContainer.scrollTop == 0);
+
+    var targetY = 0;
+    do {
+        //find the top of target relatively to the container
+        if (target == scrollContainer) break;
+        targetY += target.offsetTop;
+    } while (target = target.offsetParent);
+
+    scroll = function(c, a, b, i) {
+        i++; if (i > 30) return;
+        c.scrollTop = a + (b - a) / 30 * i;
+        setTimeout(function(){ scroll(c, a, b, i); }, 20);
+    }
+    // start scrolling
+    scroll(scrollContainer, scrollContainer.scrollTop, targetY, 0);
+}
 ```
 ## Challenge Time!
 If you haven't noticed already, the project.html file is empty. I challenge you guys to finish it!
