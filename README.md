@@ -4,13 +4,13 @@ Welcome to this personal website tutorial! Today we're going to be using **HTML*
 ## Prerequisites
 * Prior to this tutorial please install a text editor such as [Atom](https://atom.io/) or [Sublime](https://www.sublimetext.com/). I recommend Sublime because it's very lightweight and easy to use but I recommend Atom because it has a nice integration with Github and you can download packages to make it feel like an IDE (Integrated Development Environment).
 
-* Download the .zip file which contains all the assets we will be using
+* Download this repository
 
 ## What is HTML/CSS? What is Javascript?
 Wikipedia says:
 >Hypertext Markup Language (HTML) is the standard markup language for creating web pages and web applications. With Cascading Style Sheets (CSS) and JavaScript it forms a triad of cornerstone technologies for the World Wide Web.[2] Web browsers receive documents from a web server or from local storage and render them into multimedia web pages. HTML describes the structure of a web page semantically and originally included cues for the appearance of the document.
 
-###What does it actually mean?
+##What does it actually mean?
 
 HTML is like a skeleton of a webpage. When you create a website, this is what gives it a structure. HTML is not a programming language. The neat but sometimes frustrating thing is that your browser will try its best to load your website even if you're missing brackets somewhere along the way.
 CSS is what makes everything look pretty and you can even have some simple functionality built into CSS like drawing shapes or transformations.
@@ -22,9 +22,8 @@ Have you ever wondered why Facebook looks different every time you load it? Or w
 ## Let's take a look at the final product...
 Before we begin let's see what it will eventually look like
 
-<!-- ![GitHub Logo](/images/logo.png)
-Format: ![Alt Text](url) -->
-<!-- link to the website  -->
+![final](final.png)
+[Here]("http://dtravie.com/tutorial-website/personal-website/final-website/index.html") it is live:
 
 WOW! :sparkling_heart:
 
@@ -35,13 +34,11 @@ It takes quite a bit of work to get to that point, however. Let's go on to look 
 If you're using Chrome, right click on the website and select **Inspect**
 If you're using Firefox, go to your menu bar and follow this chain: **Tools -> Web Developer -> Inspector**
 
-![final](final.png)
-
 Feel free to play around with it!
 
 ## Now onto the actual coding part...
 
-###Quickstart guide to HTML/CSS
+##Quickstart guide to HTML/CSS
 ```html
 
 <h1> Title </h1>
@@ -127,8 +124,9 @@ Below are some examples of the different types of selectors. For a more complete
 
 ```
 
-### More on structural tags
-<head></head> is at the beginning of your html code. The head contains meta data, scripts, links, and some other things you'd like to load to your website. The content in head is not displayed in your browser.
+## More on structural tags
+The head is at the beginning of your html code. The head contains meta data, scripts, links, and some other things you'd like to load to your website. The content in head is not displayed in your browser.
+
 ```html
 <head>
     <meta ...>
@@ -136,12 +134,13 @@ Below are some examples of the different types of selectors. For a more complete
     <title></title>
 </head>
 ```
+
 This is all included with the starter-website index.html file so you don't have to worry about that right now.
 
 The body contains the bread and butter of your website's HTML code. It's where you'd put all those <p> tags and <img src =...> tags.
 
-### This scary thing called Javascript
-We will be using Bootstrap, an open-source, front-end framework. It contains templates we'll be calling upon in our files. In our starter file you'll notice that there's this big chunk of code with 'nav' all over it. This is Bootstrap's responsive navigation header which we will be using. If you remove the link in the header then our navigation bar looks completely different.
+## This scary thing called Javascript
+We will be using Bootstrap, an open-source, front-end framework. It contains templates we'll be calling upon in our files. This is Bootstrap's responsive navigation header which we will be using. If you remove the link in the header then our navigation bar looks completely different.
 
 ```html
 
@@ -169,7 +168,7 @@ We will be using Bootstrap, an open-source, front-end framework. It contains tem
     </nav>
 
 ```
-###Let's make the landing page!
+##Let's make the landing page!
 
 ```html
     <div class="image">
@@ -227,7 +226,14 @@ Another option is to use the slides/blog style posts we have on the homepage.
 You can get creative with it and do something else entirely!
 Email me your completed challenge or a live website or any other ways you get creative with this foundation and you'll get mad brownie points :sparkles:
 With your permission, we can even feature your website on our Facebook and website!
-## Hosting your website with Github Pages
 ## Helpful links, tips, and sources
+Special thank you to [w3schools]("https://www.w3schools.com/") for being my main source of learning how to make websites!
+[Bootstrap documentation]("https://getbootstrap.com/docs/4.0/getting-started/introduction/")
+[Small html/css cheatsheet]("https://www.bluehost.com/blog/website-design/html-css-cheat-sheet-infographic-4181/")
+[Unsplash photos]("https://www.Unsplash.com")
+[HTML quickstart guide]("http://ptgmedia.pearsoncmg.com/images/9780321928832/samplepages/0321928830.pdf")
+[Google fonts]("https://fonts.google.com/")
+[Design inspo over at muz.li]("https://muz.li/")
+[Hosting your website with github]("https://pages.github.com/")
 ## Thanks for following along!
 My name is Daniela and my email is dtravie@gmail.com if you have any questions or comments
